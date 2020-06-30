@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.beautylab.rxt">
+    package="com.beauty.lab">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -14,7 +14,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus"/>
 
     <application
-        android:name=".App"
+        android:name="com.beauty.lab.App"
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".mvp.view.LoadingActivity">
+        <activity android:name="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -55,11 +55,11 @@
         </activity>
 
         <activity-alias
-            android:name="com.beautylab.rxt.default"
+            android:name="com.beauty.lab.default"
             android:enabled="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -67,12 +67,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.monkey"
+            android:name="com.beauty.lab.monkey"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_monkey"
             android:label="Tricky Monkeys"
             android:roundIcon="@mipmap/ic_launcher_monkey_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -80,12 +80,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.vegas"
+            android:name="com.beauty.lab.vegas"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_vegas"
             android:label="Vegas Treasure"
             android:roundIcon="@mipmap/ic_launcher_vegas_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -93,12 +93,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.sevenshell"
+            android:name="com.beauty.lab.sevenshell"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_sevens"
             android:label="Sevens in Hell"
             android:roundIcon="@mipmap/ic_launcher_sevenshell_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -106,12 +106,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.sevensruby"
+            android:name="com.beauty.lab.sevensruby"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_ruby"
             android:label="Ruby Sevens"
             android:roundIcon="@mipmap/ic_launcher_ruby_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -119,12 +119,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.strawberry"
+            android:name="com.beauty.lab.strawberry"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_strawberry"
             android:label="Sweet Strawberry"
             android:roundIcon="@mipmap/ic_launcher_strawberry_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -132,12 +132,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.pharaon"
+            android:name="com.beauty.lab.pharaon"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_pharaon"
             android:label="Pharaoh Mystery"
             android:roundIcon="@mipmap/ic_launcher_pharaon_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -145,12 +145,12 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.shtirliz"
+            android:name="com.beauty.lab.shtirliz"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_shtirliz"
             android:label="Shtirlitz Attack"
             android:roundIcon="@mipmap/ic_launcher_shtirliz_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -158,38 +158,38 @@
         </activity-alias>
 
         <activity-alias
-            android:name="com.beautylab.rxt.book"
+            android:name="com.beauty.lab.book"
             android:enabled="false"
             android:icon="@mipmap/ic_launcher_book"
             android:label="Book of Mystery Ra"
             android:roundIcon="@mipmap/ic_launcher_book_round"
-            android:targetActivity=".mvp.view.LoadingActivity">
+            android:targetActivity="com.beauty.lab.mvp.view.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
 
-        <activity android:name=".mvp.view.MainActivity"
+        <activity android:name="com.beauty.lab.mvp.view.MainActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
 
-        <activity android:name=".RecipeActivity"
+        <activity android:name="com.beauty.lab.RecipeActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
         </activity>
 
-        <activity android:name=".mvp.view.CatalogActivity"
+        <activity android:name="com.beauty.lab.mvp.view.CatalogActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
 
         </activity>
-        <activity android:name=".mvp.view.CatalogGroupeActivity"
+        <activity android:name="com.beauty.lab.mvp.view.CatalogGroupeActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
 
         </activity>
-        <activity android:name=".MyWebView"
+        <activity android:name="com.beauty.lab.MyWebView"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:windowSoftInputMode="adjustResize">
 
