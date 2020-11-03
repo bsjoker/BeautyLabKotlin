@@ -19,7 +19,7 @@ class CatalogPresenter(val mView: CatalogContract.View): CatalogContract.Present
     )
     private val groupsForRV: ArrayList<RecipeModelForRV> = ArrayList()
 
-    override fun fillDataForRV() {
+    override fun fillDataForReciclerView() {
         for (i in 0..3){
             groupsForRV.add(
                 RecipeModelForRV(
@@ -29,10 +29,10 @@ class CatalogPresenter(val mView: CatalogContract.View): CatalogContract.Present
             )
         }
 
-        mView.setDataToRV(groupsForRV)
+        mView.setDataInRV(groupsForRV)
     }
 
     override fun clickToItem(pos: Int) {
-        mView.startNewActivity(pos)
+        mView.startActivity(pos)
     }
 }

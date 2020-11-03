@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Url
 
-interface iBeautyDataApi {
+interface iBeautyLabApi {
 
     @GET
     fun getData(@Url url: String): Single<List<ArticlesModel>>

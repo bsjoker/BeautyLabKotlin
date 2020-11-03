@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         const val TAG = "MainActivity"
     }
 
-    lateinit var adapterTop: RecipesAdapter
-    lateinit var adapterBottom: RecipesAdapter
+    lateinit var recipeAdapterTop: RecipesAdapter
+    lateinit var recipeAdapterBottom: RecipesAdapter
 
     val mPresenter: MainContract.Presenter by inject { parametersOf(this) }
 
@@ -32,10 +32,10 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mPresenter.fillListData()
+        mPresenter.fillListOfData()
 
         viewPager2.adapter = ViewPagerAdapter {
-            mPresenter.clickPosition(it, EnumOfRV.VIEWPAGER)
+            mPresenter.clickPos(it, EnumOfRV.VIEWPAGER)
         }
 
         val typeface = Typeface.createFromAsset(assets, "playfair.ttf")
@@ -56,21 +56,21 @@ class MainActivity : AppCompatActivity(), MainContract.View {
         }
     }
 
-    override fun setDataToRV(
-        popularRecipeForRVS: ArrayList<RecipeModelForRV>,
-        newRecipeForRVS: ArrayList<RecipeModelForRV>
+    override fun setDataInRV(
+        popularRecipeForRV: ArrayList<RecipeModelForRV>,
+        newRecipeForRV: ArrayList<RecipeModelForRV>
     ) {
-        adapterTop = RecipesAdapter(popularRecipeForRVS) {
+        recipeAdapterTop = RecipesAdapter(popularRecipeForRV) {
             Log.d(TAG, "clicked at : $it")
-            mPresenter.clickPosition(it, EnumOfRV.RECYCLERVIEW_POPULAR)
+            mPresenter.clickPos(it, EnumOfRV.RECYCLERVIEW_POPULAR)
         }
-        recyclerViewPopular.adapter = adapterTop
+        recyclerViewPopular.adapter = recipeAdapterTop
 
-        adapterBottom = RecipesAdapter(newRecipeForRVS) {
+        recipeAdapterBottom = RecipesAdapter(newRecipeForRV) {
             Log.d(TAG, "clicked at : $it")
-            mPresenter.clickPosition(it, EnumOfRV.RECYCLERVIEW_NEW)
+            mPresenter.clickPos(it, EnumOfRV.RECYCLERVIEW_NEW)
         }
-        recyclerViewNew.adapter = adapterBottom
+        recyclerViewNew.adapter = recipeAdapterBottom
 
         val snapHelperPopular = StartSnapHelper()
         snapHelperPopular.attachToRecyclerView(recyclerViewPopular)

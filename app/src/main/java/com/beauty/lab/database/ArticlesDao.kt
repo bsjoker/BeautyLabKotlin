@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.beauty.lab.models.ArticlesModel
 
-
 @Dao
 interface ArticlesDao {
     @Query("SELECT * FROM articlesData")

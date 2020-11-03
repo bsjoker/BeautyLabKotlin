@@ -23,7 +23,6 @@ class CatalogAdapter(val groupsForRV: ArrayList<RecipeModelForRV>, private val i
     private inner class GroupVH(itemView: View) : RecyclerView.ViewHolder(itemView){
         init {
             itemView.setOnClickListener {
-                Log.d("logi", "Click!") // WORKS!!!
                 itemClickListener(adapterPosition)
             }
         }

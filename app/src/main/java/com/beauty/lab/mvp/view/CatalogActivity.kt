@@ -25,7 +25,7 @@ class CatalogActivity : AppCompatActivity(), CatalogContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog)
 
-        mPresenter.fillDataForRV()
+        mPresenter.fillDataForReciclerView()
 
         navigation.selectedItemId = R.id.navigation_catalog
         navigation.setOnNavigationItemSelectedListener { item ->
@@ -36,7 +36,7 @@ class CatalogActivity : AppCompatActivity(), CatalogContract.View {
         }
     }
 
-    override fun setDataToRV(groupsForRV: ArrayList<RecipeModelForRV>) {
+    override fun setDataInRV(groupsForRV: ArrayList<RecipeModelForRV>) {
         recyclerViewCatalogMain.layoutManager = LinearLayoutManager(this)
         recyclerViewCatalogMain.adapter = CatalogAdapter(groupsForRV) {
             Log.d(TAG, "clicked at : $it")
@@ -44,7 +44,7 @@ class CatalogActivity : AppCompatActivity(), CatalogContract.View {
         }
     }
 
-    override fun startNewActivity(pos: Int) {
+    override fun startActivity(pos: Int) {
         if(pos>1){
             startActivity(Intent(this@CatalogActivity, CatalogGroupeActivity::class.java).putExtra("pos", pos+1))
         } else {

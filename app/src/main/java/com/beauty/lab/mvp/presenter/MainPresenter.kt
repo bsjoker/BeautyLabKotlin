@@ -12,8 +12,8 @@ class MainPresenter(val mView: MainContract.View) : MainContract.Presenter {
         const val TAG = "MainPresenter"
     }
 
-    lateinit var num: IntArray
-    lateinit var numRecipe: IntArray
+    lateinit var number: IntArray
+    lateinit var numberOfRecipe: IntArray
     private val drawArrayPopular = intArrayOf(
         R.drawable.popular_recp_01,
         R.drawable.popular_recp_02,
@@ -33,7 +33,7 @@ class MainPresenter(val mView: MainContract.View) : MainContract.Presenter {
     private val popularRecipeForRVS: ArrayList<RecipeModelForRV> = ArrayList()
     private val newRecipeForRVS: ArrayList<RecipeModelForRV> = ArrayList()
 
-    override fun fillListData() {
+    override fun fillListOfData() {
         for (i in 0..5) {
 
             popularRecipeForRVS.add(
@@ -51,28 +51,28 @@ class MainPresenter(val mView: MainContract.View) : MainContract.Presenter {
             )
         }
 
-        mView.setDataToRV(popularRecipeForRVS, newRecipeForRVS)
+        mView.setDataInRV(popularRecipeForRVS, newRecipeForRVS)
     }
 
-    override fun clickPosition(pos: Int, type: EnumOfRV) {
+    override fun clickPos(pos: Int, type: EnumOfRV) {
         when (type) {
             EnumOfRV.VIEWPAGER -> {
-                num = intArrayOf(4, 3, 0, 3, 4)
-                numRecipe = intArrayOf(29, 0, 2, 16, 0)
+                number = intArrayOf(4, 3, 0, 3, 4)
+                numberOfRecipe = intArrayOf(29, 0, 2, 16, 0)
             }
 
             EnumOfRV.RECYCLERVIEW_POPULAR ->
             {
-                num = intArrayOf(3, 3, 4, 0, 4, 3)
-                numRecipe = intArrayOf(6, 7, 30, 9, 11, 4)
+                number = intArrayOf(3, 3, 4, 0, 4, 3)
+                numberOfRecipe = intArrayOf(6, 7, 30, 9, 11, 4)
             }
 
             EnumOfRV.RECYCLERVIEW_NEW ->
             {
-                num = intArrayOf(3, 4, 0, 4, 3, 3)
-                numRecipe = intArrayOf(10, 37, 4, 19, 15, 17)
+                number = intArrayOf(3, 4, 0, 4, 3, 3)
+                numberOfRecipe = intArrayOf(10, 37, 4, 19, 15, 17)
             }
         }
-        mView.startNextActivity(num[pos], numRecipe[pos])
+        mView.startNextActivity(number[pos], numberOfRecipe[pos])
     }
 }

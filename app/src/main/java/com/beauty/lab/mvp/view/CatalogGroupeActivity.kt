@@ -28,108 +28,24 @@ class CatalogGroupeActivity : AppCompatActivity(), CatalogGroupContract.View {
     val mPresenter : CatalogGroupContract.Presenter by inject { parametersOf(this) }
 
     private var num: Int = 0
-//    private var numImage: Int = 0
     lateinit var adapter: GroupAdapter
-//    private var mArticles = ArrayList<ArticlesModel>()
-//    private var mRecipes = ArrayList<RecipesModel>()
     private var recipesForRV: ArrayList<RecipeModelForRVGroup> = ArrayList()
-//    private lateinit var currentDraweblesList: IntArray
-//    private val draweblesHair = intArrayOf(
-//        R.drawable.hair_01,
-//        R.drawable.hair_02,
-//        R.drawable.hair_03,
-//        R.drawable.hair_04,
-//        R.drawable.hair_05
-//    )
-//
-//    private val draweblesBody = intArrayOf(
-//        R.drawable.body_01,
-//        R.drawable.body_02,
-//        R.drawable.body_03,
-//        R.drawable.body_04,
-//        R.drawable.body_05,
-//        R.drawable.body_06,
-//        R.drawable.body_07,
-//        R.drawable.body_08
-//    )
-//
-//    private val draweblesFace = intArrayOf(
-//        R.drawable.face_01,
-//        R.drawable.face_02,
-//        R.drawable.face_03,
-//        R.drawable.face_04,
-//        R.drawable.face_05
-//    )
-
     private lateinit var articlesViewModel: ArticlesViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog_grope)
 
+        num = intent.getIntExtra("pos", 0)
+
         articlesViewModel = ViewModelProvider(this).get(ArticlesViewModel::class.java)
         articlesViewModel.allArticles.observe(this, Observer { articles ->
             articles?.let {
                 mPresenter.fillDataFromDB(it, num)
-//                mArticles.addAll(it)
-//                mRecipes.addAll(mArticles[num].articles)
-//                var numImageOld = 0
-//                mRecipes.forEach {
-//                    numImage = (0..4).random()
-//                    while (numImage == numImageOld) {
-//                        numImage = (0..4).random()
-//                        Log.d(TAG, "NumImage: " + numImage + ". NumImageOld: " + numImageOld)
-//                    }
-//                    numImageOld = numImage
-//                    var recipeModelForRVGroup = RecipeModelForRVGroup(
-//                        ContextCompat.getDrawable(
-//                            this,
-//                            currentDraweblesList[numImage]
-//                        ), it.name, it.rate, it.description
-//                    )
-//                    recipesForRV.add(recipeModelForRVGroup)
-//                }
-//                updateRV()
             }
         })
 
         navigation.selectedItemId = R.id.navigation_catalog
-        num = intent.getIntExtra("pos", 0)
-
-//        when (num) {
-//            0 -> {
-//                currentDraweblesList = draweblesHair
-//                image.setImageDrawable(ContextCompat.getDrawable(this,
-//                    R.drawable.group_hair
-//                ))
-//                tvGroup.text = resources.getStringArray(R.array.group_main_catalog)[0]
-//            }
-//
-//            1 -> {
-//                currentDraweblesList = draweblesBody
-//                image.setImageDrawable(ContextCompat.getDrawable(this,
-//                    R.drawable.group_body
-//                ))
-//                tvGroup.text = resources.getStringArray(R.array.group_main_catalog)[1]
-//            }
-//
-//            3 -> {
-//                currentDraweblesList = draweblesBody
-//                image.setImageDrawable(ContextCompat.getDrawable(this,
-//                    R.drawable.group_body
-//                ))
-//                tvGroup.text = resources.getStringArray(R.array.group_main_catalog)[2]
-//            }
-//
-//            4 -> {
-//                currentDraweblesList = draweblesFace
-//                image.setImageDrawable(ContextCompat.getDrawable(this,
-//                    R.drawable.group_face
-//                ))
-//                tvGroup.text = resources.getStringArray(R.array.group_main_catalog)[3]
-//            }
-//        }
-
 
 
         navigation.setOnNavigationItemSelectedListener { item ->
@@ -161,6 +77,5 @@ class CatalogGroupeActivity : AppCompatActivity(), CatalogGroupContract.View {
         }
 
         recyclerViewCatalogSecond.adapter = adapter
-        //adapter.notifyDataSetChanged()
     }
 }

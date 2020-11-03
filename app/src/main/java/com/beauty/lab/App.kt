@@ -28,7 +28,7 @@ class App : Application() {
     }
 
     companion object {
-        fun create(): iBeautyDataApi {
+        fun create(): iBeautyLabApi {
             val interceptor = HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
@@ -36,11 +36,11 @@ class App : Application() {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://80.211.207.96:14234/")
+                .baseUrl("https://raw.githubusercontent.com/")
                 .client(client)
                 .build()
 
-            return retrofit.create(iBeautyDataApi::class.java)
+            return retrofit.create(iBeautyLabApi::class.java)
         }
 
         lateinit var instance: App

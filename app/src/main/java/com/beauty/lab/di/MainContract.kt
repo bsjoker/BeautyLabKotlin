@@ -6,11 +6,11 @@ import com.beauty.lab.utils.EnumOfRV
 interface MainContract {
     interface View {
         fun startNextActivity(num: Int, numRecipe: Int)
-        fun setDataToRV(popularRecipeForRVS: ArrayList<RecipeModelForRV>, newRecipeForRVS: ArrayList<RecipeModelForRV>)
+        fun setDataInRV(popularRecipeForRVS: ArrayList<RecipeModelForRV>, newRecipeForRVS: ArrayList<RecipeModelForRV>)
     }
 
     interface Presenter {
-        fun fillListData()
-        fun clickPosition(pos: Int, type: EnumOfRV)
+        fun fillListOfData()
+        fun clickPos(pos: Int, type: EnumOfRV)
     }
 }

@@ -162,16 +162,6 @@ class RecipeActivity : AppCompatActivity() {
         startAnimationAlpha(tvPrepare, 600)
         startAnimationTranslation(llUsage, 600)
         startAnimationAlpha(tvUsage, 900)
-
-//        nested_content.setOnScrollChangeListener(
-//            NestedScrollView.OnScrollChangeListener {
-//                    _, scrollX, scrollY, _, oldScrollY ->
-//
-//                if(scrollY > oldScrollY){
-//                    Log.d(TAG, "Scroll down")
-//                    startAnimationTranslation(navigation, 0)
-//                }
-//            })
     }
 
     private fun startAnimationTranslation(view: View?, delay: Long) {

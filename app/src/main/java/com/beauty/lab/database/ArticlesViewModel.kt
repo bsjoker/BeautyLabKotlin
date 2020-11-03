@@ -14,8 +14,6 @@ class ArticlesViewModel(application: Application) : AndroidViewModel(application
     val allArticles: LiveData<List<ArticlesModel>>
 
     init {
-        // Gets reference to WordDao from WordRoomDatabase to construct
-        // the correct WordRepository.
         val articlesDao = AppDatabase.getAppDataBase(
             application,
             viewModelScope

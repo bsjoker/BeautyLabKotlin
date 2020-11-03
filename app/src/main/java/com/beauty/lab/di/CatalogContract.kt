@@ -4,13 +4,13 @@ import com.beauty.lab.models.RecipeModelForRV
 
 interface CatalogContract {
     interface View {
-        fun setDataToRV(groupsForRV: ArrayList<RecipeModelForRV>)
-        fun startNewActivity(pos: Int)
+        fun setDataInRV(groupsForRV: ArrayList<RecipeModelForRV>)
+        fun startActivity(pos: Int)
 
     }
 
     interface Presenter {
-        fun fillDataForRV()
+        fun fillDataForReciclerView()
         fun clickToItem(pos: Int)
 
     }

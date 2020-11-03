@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">Beauty Lab</string>
+    <string name="app_name">Nature Lab</string>
     <string name="popular_recipe">Популярные <i>рецепты</i></string>
     <string name="new_recipe">Новые <i>рецепты</i></string>
     <string name="test">Домашний репейный шампунь\n<i>для волос</i></string>
     <string name="activ_comp">Активные компоненты</string>
     <string name="Prepare">Приготовление</string>
     <string name="Usage">Применение</string>
+    <string name="loading_data">Загрузка данных...</string>
+    <string name="check_internet_connection">Проверьте интернет-соединение\nи повторите попытку</string>
 
     <string-array name="view_holder_recp">
         <item>Маска для сохранения молодости</item>
@@ -40,21 +42,10 @@
         <item>Лицо</item>
     </string-array>
 
-    <string-array name="iconsList">
-        <item>monkey</item>
-        <item>vegas</item>
-        <item>sevenshell</item>
-        <item>sevensruby</item>
-        <item>strawberry</item>
-        <item>pharaon</item>
-        <item>shtirliz</item>
-        <item>book</item>
-    </string-array>
+    <string name="facebook_app_id">277323020250388</string>
+    <string name="fb_login_protocol_scheme">fb277323020250388</string>
 
-    <string name="facebook_app_id">980025335730672</string>
-    <string name="fb_login_protocol_scheme">fb980025335730672</string>
-
-    <string name="default_notification_channel_id">12354</string>
     <string name="nav_main">Главная</string>
     <string name="nav_catalog">Каталог</string>
+
 </resources>

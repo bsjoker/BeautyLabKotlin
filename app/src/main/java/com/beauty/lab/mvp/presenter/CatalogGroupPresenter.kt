@@ -17,7 +17,6 @@ class CatalogGroupPresenter(val mView: CatalogGroupContract.View): CatalogGroupC
 
     lateinit var image: Drawable
     private var text: String = ""
-    private var num: Int = 0
     private var numImage: Int = 0
     private var mArticles = ArrayList<ArticlesModel>()
     private var mRecipes = ArrayList<RecipesModel>()
